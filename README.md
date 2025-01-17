@@ -38,6 +38,7 @@ This example demonstrates how to create a Virtual Private Cloud (VPC) designed f
 
 ## Architecture Diagram
 ![VPC Architecture Diagram](vpc.png)
+![VPC Architecture Diagram](dd.png)
 
 ---
 
