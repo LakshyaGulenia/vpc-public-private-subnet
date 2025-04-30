@@ -41,6 +41,71 @@ This example demonstrates how to create a Virtual Private Cloud (VPC) designed f
 ![VPC Architecture Diagram](dd.png)
 
 ---
+# 📘 AWS Target Group – Explained
+
+## 📌 What is a Target Group?
+
+A **Target Group** in AWS defines a set of backend resources (like EC2 instances, IP addresses, or Lambda functions) that receive traffic from a **Load Balancer**.
+
+When a request reaches your Load Balancer, the target group decides *where* that traffic should go.
+
+---
+
+## 🧱 Components of a Target Group
+
+- **🎯 Targets**: Resources like:
+  - EC2 Instances
+  - IP Addresses
+  - Lambda Functions
+
+- **📡 Health Checks**:
+  - Regularly check the status of targets.
+  - Only healthy targets receive traffic.
+
+- **🔌 Protocol & Port**:
+  - Protocols like HTTP, HTTPS, TCP.
+  - Port numbers like 80 or 443 for traffic routing.
+
+---
+
+## 🎯 Example Use Case
+
+You have 3 EC2 instances running a web app:
+
+1. Create a **target group** and register all 3 instances.
+2. Create an **Application Load Balancer (ALB)**.
+3. Attach the target group to a **listener rule**.
+4. Incoming traffic is routed to the healthy instances.
+
+---
+
+## 🔄 Load Balancer & Target Group Relationship
+
+- ✅ First, **create the target group**.
+- 🔗 Then, **attach it to a load balancer listener rule**.
+- 🎯 This ensures efficient traffic routing and automatic scaling.
+
+---
+
+## 🛠️ Benefits of Using Target Groups
+
+- Fine-grained traffic routing
+- Dynamic health checks
+- Easy to register/deregister instances
+- Works well with **Auto Scaling**
+
+---
+
+## 📚 Related AWS Concepts
+
+- [Elastic Load Balancer (ELB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
+- [Health Checks](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html)
+- [Listener Rules](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)
+
+---
+
+> 💡 **Tip:** Always create your target group *before* creating or configuring your Load Balancer to avoid dependency issues.
+
 
 ## Benefits
 1. **High Availability**: Resources deployed in multiple AZs ensure failover during outages.
